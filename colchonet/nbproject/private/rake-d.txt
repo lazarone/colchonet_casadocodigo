@@ -1,4 +1,5 @@
 about=
+app\:migrar_senhas=
 assets\:clean[keep]=
 assets\:clobber=
 assets\:environment=
