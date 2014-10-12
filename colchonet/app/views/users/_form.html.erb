@@ -1,18 +1,12 @@
-<% if @user.errors.any? %>
-<div id="error_explanation">
-  <h2>Infelizmente não foi possível completar a ação pois o formulario possui os seguintes erros:</h2>
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message -%></li><!-- Mensagem de erro -->
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
 <%= form_for @user do |f| %>
 <p>
   <%= f.label :full_name %><br />
   <%= f.text_field :full_name %>
+  <% if @user.errors.has_key? :full_name %>
+    <div class="error_message">
+      <%= @user.errors[:full_name] -%>
+    </div>
+  <% end %>
 </p>
 <p>
   <%= f.label :location %><br />
